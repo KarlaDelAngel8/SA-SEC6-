@@ -1,0 +1,34 @@
+package com.sa_sec6;
+
+import java.util.Scanner;
+/* Mi nombre es Karla Vanessa Del Angel Santiago 
+ * 
+ * https://github.com/KarlaDelAngel8/SA-SEC6-.git
+ * */
+
+public class Codigo6 {
+
+    public static void main(String[] args) {
+        int[] n = new int[20];   //La declaración del array debe ser int[] n = new int[20];.
+
+        for (int i = 0; i < 20; i++) {  // La corrección es i++.
+            n[i] = (int)(Math.random() * 381) + 20;   //está generando un número entero aleatorio entre 20 y 400 y asignándolo al elemento i del array n. 
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n¿Qué números quiere resaltar?");
+        System.out.print("(1 – los múltiplos de 5, 2 – los múltiplos de 7): ");
+        int opcion = Integer.parseInt(scanner.nextLine());
+
+        int multiplo = (opcion == 1) ? 5 : 7;    // coreccion en el valor que se itera int multiplo = (opcion == 1) : 5 ? 7; a int multiplo = (opcion == 1) ? 5 : 7;.
+    /*El propósito de este ciclo es destacar los elementos del array 
+ son múltiplos de un número específico, envolviéndolos en corchetes al imprimirlos, mientras que los otros elementos se imprimen normalmente.*/
+        for (int e : n) {         //El bucle foreach debe ser for (int e : n) en lugar de foreach (char e : n).
+            if (e % multiplo == 0) {
+                System.out.print("[" + e + "] ");
+            } else {
+                System.out.print(e + " ");
+            }
+        }
+    }
+}
